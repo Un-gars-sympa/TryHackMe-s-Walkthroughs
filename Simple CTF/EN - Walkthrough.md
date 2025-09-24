@@ -11,7 +11,7 @@ https://tryhackme.com/room/easyctf
 
 ## **First question** : *How many services are running under port 1000?*
 So let's begging with a basic Nmap scan :
-`Nmap -sC -sV VICTIME_IP`
+`Nmap -sC -sV VICTIM_IP`
 
 [![Capture-d-cran-2025-09-24-135308.png](https://i.postimg.cc/FHb6t1Mh/Capture-d-cran-2025-09-24-135308.png)](https://postimg.cc/Yv9RY22P)
 
@@ -24,7 +24,7 @@ Very simple, we take a look on the port number 2222
 *What is running on the higher port?* : **SSH**
 ## **Third question** : *What's the CVE you're using against the application?*
 So we need to take a futher look on the http page that we scanned and do a gobuster on it with :
-`gobuster dir -u VICTIME_IP -w /usr/share/wordlists/dirb/common.txt`
+`gobuster dir -u VICTIM_IP -w /usr/share/wordlists/dirb/common.txt`
 
 
 [![Capture-d-cran-2025-09-24-140414.png](https://i.postimg.cc/vTgQX5SY/Capture-d-cran-2025-09-24-140414.png)](https://postimg.cc/GTRwmTCV)
@@ -39,7 +39,7 @@ It's said in the exploit DB page
 
 *To what kind of vulnerability is the application vulnerable?* : **SQLI**
 ## **Fifth question** : *What's the password ?* 
-For that, let's start our POC with this command : `python2.7 46635.py -u http://VICTIME_IP/simple/ -w /usr/share/wordlists/rockyou.txt -c`
+For that, let's start our POC with this command : `python2.7 46635.py -u http://VICTIM_IP/simple/ -w /usr/share/wordlists/rockyou.txt -c`
 
 the *-u* the URL, the *-w* for the wordlist and the *-c* for the crack option
 
