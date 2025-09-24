@@ -1,4 +1,0 @@
-
-
-# Description :
-Beginner level ctf
