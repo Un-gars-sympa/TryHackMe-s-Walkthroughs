@@ -23,7 +23,7 @@ Très simple, on regarde le port numéro 2222
 
 *What is running on the higher port?* : **SSH**
 ## **Troisième question** : *What's the CVE you're using against the application?*
-On a besoins de regarder plus profondément la page http qu'on a scanné et on fait un gobuster dessus :
+On a besoin de regarder plus profondément la page http qu'on a scanné et on fait un gobuster dessus :
 `gobuster dir -u VICTIME_IP -w /usr/share/wordlists/dirb/common.txt`
 
 
@@ -55,7 +55,7 @@ C'est juste une déduction mais j'ai supposé que c'était SSH et c'est le cas
 ## **Septième question** : *What's the user flag?* 
 Pour ça, essayons de nous log sur le service SSH avec les identifiants obtenus
 
-`ssh mitch@VICTIM_IP -p 2222`
+`ssh mitch@VICTIME_IP -p 2222`
 
 Et voilà !
 
