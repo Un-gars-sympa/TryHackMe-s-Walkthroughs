@@ -81,7 +81,7 @@ So let's take a step back and see what linpeas tells us and I was too excited an
 
 What is teeling us linpeas : "Yooo, John is a root and lxd group member ". Mmmh too bad, I don't have the John's password. But I don't know what's the lxd thing so go check on the web
 
-After a reserch, I learned that LXD is **a container management tool for the Linux operating system**. I also saw the path to PE with this thing : https://www.exploit-db.com/exploits/46978
+After a reserch, I learned that LXD is **a container management tool for the Linux operating system**. I also saw the path to PE with this [thing](https://www.exploit-db.com/exploits/46978)
 
 I'm a good boy and I follow all the inscructions from the POC
 
