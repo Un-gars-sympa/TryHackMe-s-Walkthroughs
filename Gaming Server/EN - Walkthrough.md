@@ -1,3 +1,4 @@
+<img width="320" height="240" alt="image" src="https://github.com/user-attachments/assets/06f9bfdb-b0cf-4421-bc66-01a101c7b96c" />
 
 # Link & Description
 https://tryhackme.com/room/gamingserver
