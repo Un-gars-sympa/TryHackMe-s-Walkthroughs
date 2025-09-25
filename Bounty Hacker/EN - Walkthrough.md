@@ -43,7 +43,7 @@ Mmmh an easy guess, the SSH service
 
 ## **Fifth question** : *What is the users password?*
 
-So for brute force the SSH service, we are going to use Hydra with this command `hydra -l lin -P locks.txt ssh://VICTIM_IP`
+So for brute force the SSH service, we are going to use Hydra with this command (of course, we are going to use the wordlist obtained first) `hydra -l lin -P locks.txt ssh://VICTIM_IP`
 
 And we have our answer !
 
