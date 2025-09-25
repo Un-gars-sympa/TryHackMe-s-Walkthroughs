@@ -82,7 +82,7 @@ Bon reprennons du recul et regardons ce que linpeas nous dit et j'étais telleme
 
 Ce que nous dit linpeas : "Yooo, John c'est un membre du groupe root et lxd ". Mmmh dommage, j'ai pas le mdp de John. Mais je sais pas ce que c'est le truc lxd donc je regarde sur google
 
-Et après une recherche, j'apprends que LXD est **un outil de gestion des conteneurs du système d’exploitation Linux**. J'ai aussi vu un moyen d'escalade de privilege avec cette chose : https://www.exploit-db.com/exploits/46978
+Et après une recherche, j'apprends que LXD est **un outil de gestion des conteneurs du système d’exploitation Linux**. J'ai aussi vu un moyen d'escalade de privilege avec cette [chose](https://www.exploit-db.com/exploits/46978)
 
 Je suis un gentil garçon et je suis les instructions du POC
 
