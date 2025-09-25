@@ -1,7 +1,7 @@
 <img width="1200" height="680" alt="image" src="https://github.com/user-attachments/assets/ff9397cb-a5b7-4a0b-9fce-cafb85525308" />
 
 # Link & Description
-https://tryhackme.com/room/gamingserver
+https://tryhackme.com/room/cowboyhacker
 
 *"You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!"*
 
@@ -67,7 +67,7 @@ Normaly I upload linpeas.sh for the privilege escalation but when I have the use
 
 <img width="945" height="129" alt="image" src="https://github.com/user-attachments/assets/63f52b36-a6a8-4aef-a407-96044ee5a267" />
 
-Let's take a look on GTFOBins and precisely on the tar page https://gtfobins.github.io/gtfobins/tar/
+Let's take a look on [GTFOBins](https://gtfobins.github.io/) and precisely on the [tar page](https://gtfobins.github.io/gtfobins/tar/)
 
 Now we need to follow the sudo's instruction and voila !
 
