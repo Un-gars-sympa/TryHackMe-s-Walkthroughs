@@ -1,7 +1,7 @@
 <img width="1200" height="680" alt="image" src="https://github.com/user-attachments/assets/ff9397cb-a5b7-4a0b-9fce-cafb85525308" />
 
 # Lien & Description
-https://tryhackme.com/room/gamingserver
+https://tryhackme.com/room/cowboyhacker
 
 *"You talked a big game about being the most elite hacker in the solar system. Prove it and claim your right to the status of Elite Bounty Hacker!"*
 
