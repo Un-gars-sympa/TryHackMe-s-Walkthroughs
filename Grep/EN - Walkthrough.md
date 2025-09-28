@@ -52,10 +52,65 @@ Oh wait, not nothing because we have a *"Fix: remove key"* so let's go on the fi
 
 *What is the API key that allows a user to register on the website?* : **ffe60ecaa8bba2f12b43d1a4b15b8f39**
 ## **Second question** : *What is the first flag?*
+Well, let's continue our journey, now that we have the right API key, I think we are allowed to register an account so I changed the API key with Burp Suite and I tried to register a account
 
+<img width="1163" height="1198" alt="image" src="https://github.com/user-attachments/assets/966515aa-f34b-4f7c-8e46-5488bbb359fd" />
+
+And let's gooo, it works !
+
+<img width="1870" height="733" alt="image" src="https://github.com/user-attachments/assets/dc973b46-0172-4a8b-870c-941e1a00f8c0" />
+
+Logged with our account, we have our first flag :)
+
+<img width="1903" height="889" alt="image" src="https://github.com/user-attachments/assets/68c9fa00-4b83-4ebb-a73d-b10576035905" />
 
 *What is the first flag?* : **THM{4ec9806d7e1350270dc402ba870ccebb}**
 ## **Third question** : *What is the email of the "admin" user?*
+Now I don't what to do :|, I mean, I am already in the dashboard, and I can't go anywhere else (except logging out but I don't think it can be useful for now)
+
+I think we need to do some research (again)
+
+Oh wait, I just saw a **upload.php** on the repo, so I supposed there is the same on the HTTPS page, let's take a look.
+
+So now we have a upload page that can be useful for a reverse shell and as we can see, there an extension filter. So first we need a custom reverse shell
+
+<img width="3574" height="1451" alt="image" src="https://github.com/user-attachments/assets/e321e454-fa52-47a2-95ed-f907b5f7c80c" />
+
+For the reverse shell, I'm using [Revshell](https://www.revshells.com) and the PHP PentestMonkey, so I put my IP and the port 4444 and copy/past into a *shell.php*
+
+<img width="2418" height="1187" alt="image" src="https://github.com/user-attachments/assets/c7456314-6428-43fb-8905-0cd74ebab259" />
+
+As I said, if we try to upload our .php file, the extension filter will stop us like a sherif so we need to bypass that.
+
+Actually, the extension filter for this page check the magic number of the file (to make it simple, very file extension have his "signature" with bytes at the begging of the file, for example, .jpg -> ff d8 ff e0, .gif -> 47 49 46 38, ...) So the idea is to make the filter believe that we upload a .jpeg instead of a .php. For that, we are going to modifie our .php first
+
+We add 8 bytes and after 4 bytes at the begging of our reverse shell like this (you will see why) : 
+
+<img width="452" height="265" alt="image" src="https://github.com/user-attachments/assets/a78a7e58-e93f-425a-9761-79fdc94ae4b3" />
+
+After, we can modifie the magic number of our file, for that, we are going to use hexeditor : `hexeditor shell.php` and we modifie the first 8 characters with the magic number of a .jpeg
+
+<img width="1807" height="321" alt="image" src="https://github.com/user-attachments/assets/0372d5a6-0a39-4023-82c6-2e4a301f35f5" />
+
+Because we modified the begging of our file that's why we added the 8 & 4 bytes, for preserving the code php code.
+
+And now if we want to verifie what type is this file with the command `file` we have that : 
+
+<img width="234" height="99" alt="image" src="https://github.com/user-attachments/assets/e7395da9-a73e-4094-a4f2-794887af12ff" />
+
+So now let's try to upload our reverse shell annnnd yatta !
+
+<img width="533" height="217" alt="image" src="https://github.com/user-attachments/assets/46d9256b-03f1-485c-ac96-1f1c55078e6f" />
+
+On the "upload.php", we can see : "$uploadPath = 'uploads/';" so I supposed that our .php goes there and that's right. So before opening the .php file, I start a Netcat listener with a `nc -lvnp 4444` and TADAM, we have our reverse shell :)
+
+<img width="1806" height="383" alt="image" src="https://github.com/user-attachments/assets/1c294f69-46ee-4927-a713-1af3fa411322" />
+
+Well, my first move was to go to /home and check the content and nothing :/ so let's go on /var/www to see a config.php or something else that can contains information about the owner/admin of the http page.
+
+So in the /var/www folder, we have a *backup* folder, and inside, there is a *users.sql* mmmmh, so let's `cat`this file and I think we have our answer with this email address : 
+
+<img width="1101" height="1028" alt="image" src="https://github.com/user-attachments/assets/41114291-f97e-4741-aaca-87f5b100a86d" />
 
 *What is the email of the "admin" user?* : **admin@searchme2023cms.grep.thm**
 ## **Forth question** : *What is the host name of the web application that allows a user to check an email for a possible password leak?*
