@@ -90,4 +90,12 @@ Mais c'est quoi ce poulet ?? 🐔
 
 <img width="1013" height="422" alt="image" src="https://github.com/user-attachments/assets/5e3907ff-cce4-4fde-8df0-790165140290" />
 
-Et bien on a accès à un packet de hash. Aller je démarre msfconsole pour utiliser PsExec (j'utilise msf par habitude pour cette opération)
+Et bien on a accès à un packet de hash. Je vérifie quel compte peut être vulnérable à du Pass-the-hash.
+
+Avant ça, je vais juste mettre les noms dans un nouveau fichier et les hashes dans un autre histoire de voir quel compte pourrais-je utiliser.
+
+<img width="1551" height="637" alt="image" src="https://github.com/user-attachments/assets/ecb374a8-b502-457d-9582-995d99155480" />
+
+Parfait, reste plus qu'à utiliser PsExec pour se connecter. `psexec.py 'SOUPEDECODE.LOCAL/FileServer$@IP_VICTIME' -hashes aad3b435b51404eeaad3b435b51404ee:e41da7e79a4c76dbd9cf79d1cb325559`
+
+<img width="1810" height="419" alt="image" src="https://github.com/user-attachments/assets/197ce51d-2741-44da-bfa6-0750697403b3" />
