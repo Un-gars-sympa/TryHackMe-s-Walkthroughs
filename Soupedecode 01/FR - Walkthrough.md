@@ -42,7 +42,7 @@ Il faut donc voir si dans notre big liste, est-ce qu'il existe un compte avec ce
 
 Pour cela, j'utilise GetNPUsers.py de Impacket qui permet de faire des requets de TGT (AS-REQ) en espérant d'avoir un TGT pour un compte `GetNPUsers.py soupedecode.local/ -usersfile user.txt -format hashcat`
 
-Il semblerait qu'aucun utilisateur n'a l'option d'activée 🤡
+Il semblerait qu'aucun utilisateur n'ait l'option d'activée 🤡
 
 Dans ce cas essayons de faire du password spraying. Première option simple qui s'offre à moi, tester si username==password.
 
