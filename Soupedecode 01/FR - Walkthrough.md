@@ -3,7 +3,7 @@
 </div>
 
 # Lien & Description
-[https://tryhackme.com/room/easyctf](https://tryhackme.com/room/soupedecode01)
+[https://tryhackme.com/room/soupedecode01](https://tryhackme.com/room/soupedecode01)
 
 *Test your enumeration skills on this boot-to-root machine.*
 
